@@ -1,5 +1,5 @@
 [project]
-name = "desktop-automation-mcp-server"
+name = "claude-jarvis"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"

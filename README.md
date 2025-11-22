@@ -1,4 +1,4 @@
-# 🖥️ Desktop Automation MCP Server
+# 🤖 Claude Jarvis
 
 Turn your Claude Desktop into a **Jarvis-like assistant** capable of controlling your Windows PC.
 
@@ -45,8 +45,8 @@ This Model Context Protocol (MCP) server gives Claude "hands" and "eyes" to inte
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/desktop-automation-mcp-server.git
-    cd desktop-automation-mcp-server
+    git clone https://github.com/exquisique/claude-jarvis.git
+    cd claude-jarvis
     ```
 
 2.  **Install Dependencies:**

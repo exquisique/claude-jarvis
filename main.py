@@ -1,5 +1,5 @@
 from fastmcp import FastMCP
-from pywinauto import Desktop, Application
+
 import re
 
 # Initialize the MCP server
@@ -13,6 +13,7 @@ def list_windows() -> list[str]:
     """
     try:
         # 'uia' backend is better for modern applications (Chrome, VS Code, etc.)
+        from pywinauto import Desktop
         desktop = Desktop(backend="uia")
         windows = desktop.windows()
         
@@ -31,6 +32,7 @@ def focus_window(title_substring: str) -> str:
         title_substring: A part of the window title to search for (case-insensitive).
     """
     try:
+        from pywinauto import Desktop
         desktop = Desktop(backend="uia")
         # Find windows that match the substring
         windows = desktop.windows()
@@ -290,9 +292,9 @@ def browser_navigate(url: str) -> str:
     """
     Navigates to a URL using a headless browser and returns the page title and text content.
     """
-    from playwright.sync_api import sync_playwright
-    
     try:
+        from playwright.sync_api import sync_playwright
+        
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
             page = browser.new_page()
@@ -311,10 +313,10 @@ def browser_screenshot(url: str) -> str:
     """
     Navigates to a URL and takes a screenshot. Returns base64 image.
     """
-    from playwright.sync_api import sync_playwright
-    import base64
-    
     try:
+        from playwright.sync_api import sync_playwright
+        import base64
+        
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
             page = browser.new_page()
@@ -343,11 +345,12 @@ def index_notes(directory_path: str) -> str:
     """
     global vector_store
     import os
-    from langchain_community.document_loaders import DirectoryLoader, TextLoader
-    from langchain_community.vectorstores import FAISS
-    from langchain_community.embeddings import HuggingFaceEmbeddings
     
     try:
+        from langchain_community.document_loaders import DirectoryLoader, TextLoader
+        from langchain_community.vectorstores import FAISS
+        from langchain_community.embeddings import HuggingFaceEmbeddings
+
         if not os.path.exists(directory_path):
             return f"Directory not found: {directory_path}"
             

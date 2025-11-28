@@ -57,7 +57,7 @@ This Model Context Protocol (MCP) server gives Claude "hands" and "eyes" to inte
 3.  **Install into Claude Desktop:**
     Run this command to register the server with Claude:
     ```bash
-    uv run fastmcp install claude-desktop main.py --with pywinauto --with psutil --with pyperclip --with pyautogui --with pillow --with playwright --with langchain --with langchain-community --with faiss-cpu --with sentence-transformers --with pyttsx3 --with plyer --with opencv-python
+    uv run fastmcp install claude-desktop main.py
     ```
 
 4.  **Restart Claude Desktop.**
